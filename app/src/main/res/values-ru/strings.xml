@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Solvio</string>
+    <string name="action">Действие</string>
+    <string name="back">Назад</string>
+    <string name="actions">Действия:</string>
+    <string name="tagline">Образовательная детская игра</string>
+    <string name="sign_in_with_google">Войти с помощью Google</string>
+</resources>

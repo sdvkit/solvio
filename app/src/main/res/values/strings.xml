@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Solvio</string>
+    <string name="action">Action</string>
+    <string name="back">back</string>
+    <string name="actions">Actions:</string>
+    <string name="tagline">Educational children\'s game</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="help">Help</string>
+</resources>
