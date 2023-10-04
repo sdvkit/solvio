@@ -45,6 +45,13 @@ class ActorCardScreenFragment : Fragment() {
         initializeGameLevelWithSituations()
         configureViewModel()
         configureViews()
+        setClickListeners()
+    }
+
+    private fun setClickListeners() {
+        mBinding!!.backButton.setOnClickListener {
+            requireActivity().onBackPressedDispatcher.onBackPressed()
+        }
     }
 
     private fun configureViews() = with (mBinding!!) {

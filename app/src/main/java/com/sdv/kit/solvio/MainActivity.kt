@@ -31,4 +31,11 @@ class MainActivity : AppCompatActivity(), ScreenChanger {
             .replace(R.id.screensFragmentContainerView, screenFragment)
             .commit()
     }
+
+    override fun openScreen(screenFragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.screensFragmentContainerView, screenFragment)
+            .addToBackStack(null)
+            .commit()
+    }
 }

@@ -6,4 +6,5 @@
     <string name="tagline">Educational children\'s game</string>
     <string name="sign_in_with_google">Sign in with Google</string>
     <string name="help">Help</string>
+    <string name="settings">Settings</string>
 </resources>
