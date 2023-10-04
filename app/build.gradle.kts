@@ -43,7 +43,12 @@ dependencies {
     val gpsAuthVersion = "20.7.0"
     val splashScreenVersion = "1.0.0"
     val glideVersion = "4.16.0"
+    val gsonVersion = "2.10.1"
 
+    // Gson
+    implementation("com.google.code.gson:gson:$gsonVersion")
+
+    // Glide
     implementation("com.github.bumptech.glide:glide:$glideVersion")
 
     // Splash Screen

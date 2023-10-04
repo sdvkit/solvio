@@ -6,10 +6,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import com.sdv.kit.solvio.R
 import com.sdv.kit.solvio.callback.LevelsRecyclerViewItemCallback
-import com.sdv.kit.solvio.entity.GameLevel
+import com.sdv.kit.solvio.entity.relation.GameLevelWithSituations
 import com.sdv.kit.solvio.viewholder.LevelsRecyclerViewHolder
 
-class LevelsRecyclerViewAdapter(context: Context) : ListAdapter<GameLevel, LevelsRecyclerViewHolder>(LevelsRecyclerViewItemCallback()) {
+class LevelsRecyclerViewAdapter(context: Context) : ListAdapter<GameLevelWithSituations, LevelsRecyclerViewHolder>(LevelsRecyclerViewItemCallback()) {
     private val mInflater: LayoutInflater by lazy {
         LayoutInflater.from(context)
     }
@@ -19,5 +19,6 @@ class LevelsRecyclerViewAdapter(context: Context) : ListAdapter<GameLevel, Level
         return LevelsRecyclerViewHolder(itemView)
     }
 
-    override fun onBindViewHolder(holder: LevelsRecyclerViewHolder, position: Int) = holder.bind(getItem(position))
+    override fun onBindViewHolder(holder: LevelsRecyclerViewHolder, position: Int) =
+        holder.bind(getItem(position).gameLevel)
 }

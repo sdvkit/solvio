@@ -10,13 +10,15 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.sdv.kit.solvio.entity.GameLevel
+import com.sdv.kit.solvio.entity.Situation
+import com.sdv.kit.solvio.entity.relation.GameLevelWithSituations
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
-    private val _levels = MutableLiveData(listOf<GameLevel>())
-    val levels: LiveData<List<GameLevel>> = _levels
+    private val _levels = MutableLiveData(listOf<GameLevelWithSituations>())
+    val levels: LiveData<List<GameLevelWithSituations>> = _levels
 
     fun getLevels() = CoroutineScope(Dispatchers.IO).launch {
         Firebase.database.getReference("levels/").addValueEventListener(object : ValueEventListener {
@@ -31,11 +33,28 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     private fun handleSnapshots(snapshots: List<DataSnapshot>) {
-        _levels.value = List(snapshots.size) { index: Int ->
-            val levelMap = snapshots[index].value as Map<*, *>
-            buildGameLevel(levelMap)
+        val levelsWithSituations = mutableListOf<GameLevelWithSituations>()
+
+        snapshots.forEach { snapshot ->
+            val levelMap = snapshot.value as Map<*, *>
+
+            val situations = mutableListOf<Situation>()
+            (levelMap["situations"] as ArrayList<*>).forEach {
+                if (it != null) situations.add(buildSituation(it as Map<*, *>))
+            }
+
+            levelsWithSituations.add(GameLevelWithSituations(buildGameLevel(levelMap), situations))
         }
+
+        _levels.value = levelsWithSituations
     }
+
+    private fun buildSituation(situationMap: Map<*, *>): Situation = Situation.Builder()
+        .situationId(situationMap["situationId"].toString().toLong())
+        .actorName(situationMap["actorName"].toString())
+        .actorImageUrl(situationMap["actorImageUrl"].toString())
+        .situationDescription(situationMap["situationDescription"].toString())
+        .build()
 
     private fun buildGameLevel(levelMap: Map<*, *>): GameLevel = GameLevel.Builder()
         .levelName(levelMap["levelName"].toString())

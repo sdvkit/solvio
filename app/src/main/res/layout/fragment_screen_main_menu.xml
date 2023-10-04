@@ -61,7 +61,7 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/actionButton1"
+        android:id="@+id/playButton"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_gravity="center"
