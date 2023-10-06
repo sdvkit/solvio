@@ -59,6 +59,20 @@
                     android:contentDescription="@string/back"
                     android:background="@drawable/background_back_button"/>
 
+                <TextView
+                    android:id="@+id/starsCountTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pt_sans_narrow_bold"
+                    android:padding="16dp"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:layout_gravity="top|end"
+                    app:drawableStartCompat="@drawable/icon_star"
+                    android:drawablePadding="8dp"
+                    app:drawableTint="@color/secondary"
+                    tools:text="0/7"/>
+
             </androidx.appcompat.widget.Toolbar>
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
@@ -80,7 +94,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:background="@drawable/background_situation_description"
+                android:background="@drawable/background_description"
                 android:fontFamily="@font/pt_sans_narrow_bold"
                 android:padding="16dp"
                 android:textColor="@color/grey"

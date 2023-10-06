@@ -1,10 +1,9 @@
 package com.sdv.kit.solvio.entity.relation
 
 import com.sdv.kit.solvio.entity.GameLevel
-import com.sdv.kit.solvio.entity.Situation
 
-data class GameLevelWithSituations(
+data class GameLevelWithSituationsAndActions(
     val gameLevel: GameLevel,
 
-    val situations: List<Situation>
+    val situations: List<SituationWithActions>
 )

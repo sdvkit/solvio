@@ -8,4 +8,5 @@
     <string name="sign_in_with_google">Войти с помощью Google</string>
     <string name="help">Помошь</string>
     <string name="settings">Настройки</string>
+    <string name="close">Закрыть</string>
 </resources>

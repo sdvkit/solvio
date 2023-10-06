@@ -15,7 +15,7 @@ import com.sdv.kit.solvio.R
 import com.sdv.kit.solvio.adapter.LevelsRecyclerViewAdapter
 import com.sdv.kit.solvio.contract.ScreenChanger
 import com.sdv.kit.solvio.databinding.FragmentScreenMainMenuBinding
-import com.sdv.kit.solvio.entity.relation.GameLevelWithSituations
+import com.sdv.kit.solvio.entity.relation.GameLevelWithSituationsAndActions
 import com.sdv.kit.solvio.util.ViewPagerCustomizerUtil
 import com.sdv.kit.solvio.view.dialog.SettingsDialog
 import com.sdv.kit.solvio.viewmodel.MainViewModel
@@ -24,8 +24,8 @@ class MainMenuScreenFragment : Fragment() {
     private var mBinding: FragmentScreenMainMenuBinding? = null
     private var mMainViewModel: MainViewModel? = null
     private var mLevelsRecyclerViewAdapter: LevelsRecyclerViewAdapter? = null
-    private var mCurrentGameLevels: List<GameLevelWithSituations> = listOf()
-    private var mSelectedGameLevel: GameLevelWithSituations? = null
+    private var mCurrentGameLevels: List<GameLevelWithSituationsAndActions> = listOf()
+    private var mSelectedGameLevel: GameLevelWithSituationsAndActions? = null
     private var mScreenChanger: ScreenChanger? = null
 
     override fun onAttach(context: Context) {
@@ -63,25 +63,12 @@ class MainMenuScreenFragment : Fragment() {
 
     private fun setClickListeners() {
         mBinding!!.playButton.setOnClickListener {
-            startPlayAnimation { mScreenChanger?.openScreen(
-                ActorCardScreenFragment.newInstance(mSelectedGameLevel!!)) }
+            mScreenChanger?.openScreen(ActorCardScreenFragment.newInstance(mSelectedGameLevel!!))
         }
 
         mBinding!!.settingsButton.setOnClickListener {
             SettingsDialog().show(parentFragmentManager, null)
         }
-    }
-
-    private fun startPlayAnimation(afterAnimAction: () -> Unit) {
-        val translateAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.play_level_animation)
-
-        translateAnimation.setAnimationListener(object : AnimationListener {
-            override fun onAnimationStart(p0: Animation?) {}
-            override fun onAnimationEnd(p0: Animation?) = afterAnimAction()
-            override fun onAnimationRepeat(p0: Animation?) {}
-        })
-
-        mBinding!!.playButton.startAnimation(translateAnimation)
     }
 
     private fun configureViewPager() {

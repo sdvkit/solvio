@@ -45,7 +45,7 @@
         android:id="@+id/levelDescriptionTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/background_situation_description"
+        android:background="@drawable/background_description"
         android:fontFamily="@font/pt_sans_narrow_bold"
         android:padding="16dp"
         android:textColor="@color/grey"

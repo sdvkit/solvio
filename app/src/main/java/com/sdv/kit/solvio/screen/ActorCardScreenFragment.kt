@@ -1,5 +1,6 @@
 package com.sdv.kit.solvio.screen
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,8 +13,8 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.google.gson.Gson
 import com.sdv.kit.solvio.R
 import com.sdv.kit.solvio.databinding.FragmentScreenActorCardBinding
-import com.sdv.kit.solvio.entity.Situation
-import com.sdv.kit.solvio.entity.relation.GameLevelWithSituations
+import com.sdv.kit.solvio.entity.relation.GameLevelWithSituationsAndActions
+import com.sdv.kit.solvio.view.dialog.ActionResultDialog
 import com.sdv.kit.solvio.viewmodel.ActorCardViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -23,7 +24,8 @@ class ActorCardScreenFragment : Fragment() {
     private var mActorCardViewModel: ActorCardViewModel? = null
     private var mBinding: FragmentScreenActorCardBinding? = null
     private var currentSituationIndex = 0
-    private lateinit var mGameLevelWithSituations: GameLevelWithSituations
+    private var currentStarsCount = 0
+    private lateinit var mGameLevelWithSituationsAndActions: GameLevelWithSituationsAndActions
 
     override fun onDestroyView() {
         super.onDestroyView()
@@ -48,25 +50,73 @@ class ActorCardScreenFragment : Fragment() {
         setClickListeners()
     }
 
-    private fun setClickListeners() {
-        mBinding!!.backButton.setOnClickListener {
+    private fun setClickListeners() = with (mBinding!!) {
+        backButton.setOnClickListener {
             requireActivity().onBackPressedDispatcher.onBackPressed()
+        }
+
+        actionButton1.setOnClickListener {
+            showActionResult(0)
+            checkAndIncrementStarsCount(0)
+
+            if (currentSituationIndex < mGameLevelWithSituationsAndActions.situations.size - 1) {
+                configureViewsByNextSituation()
+            }
+        }
+
+        actionButton2.setOnClickListener {
+            showActionResult(1)
+            checkAndIncrementStarsCount(1)
+
+            if (currentSituationIndex < mGameLevelWithSituationsAndActions.situations.size - 1) {
+                configureViewsByNextSituation()
+            }
         }
     }
 
+    private fun configureViewsByNextSituation() {
+        currentSituationIndex++
+        configureViews()
+    }
+
+    private fun checkAndIncrementStarsCount(actionIndex: Int) {
+        val situationWithActions = mGameLevelWithSituationsAndActions.situations[currentSituationIndex]
+        val action = situationWithActions.actions[actionIndex]
+
+        if (action.isPositive) {
+            currentStarsCount++
+            updateStarsCount()
+        }
+    }
+
+    @SuppressLint("SetTextI18n")
+    private fun updateStarsCount() {
+        mBinding!!.starsCountTextView.text = "${currentStarsCount}/${mGameLevelWithSituationsAndActions.situations.size}"
+    }
+
+    private fun showActionResult(actionIndex: Int) {
+        val situationWithActions = mGameLevelWithSituationsAndActions.situations[currentSituationIndex]
+        ActionResultDialog.instance(situationWithActions.actions[actionIndex]).show(childFragmentManager, null)
+    }
+
+    @SuppressLint("SetTextI18n")
     private fun configureViews() = with (mBinding!!) {
-        val situation = mGameLevelWithSituations.situations[currentSituationIndex]
-        loadActorImage(actorImageView, situation)
-        actorNameTextView.text = situation.actorName
-        situationDescription.text = situation.situationDescription
+        val situationWithActions = mGameLevelWithSituationsAndActions.situations[currentSituationIndex]
+        loadActorImage(actorImageView, situationWithActions.situation.actorImageUrl)
+        updateStarsCount()
+
+        actorNameTextView.text = situationWithActions.situation.actorName
+        situationDescription.text = situationWithActions.situation.situationDescription
+        actionButton1.text = situationWithActions.actions[0].actionDescription
+        actionButton2.text = situationWithActions.actions[1].actionDescription
     }
 
     private fun loadActorImage(
         actorImageView: ImageView,
-        situation: Situation
+        actorImageUrl: String
     ) = CoroutineScope(Dispatchers.Main).launch {
         Glide.with(requireContext())
-            .load(situation.actorImageUrl)
+            .load(actorImageUrl)
             .placeholder(R.drawable.image_logo)
             .diskCacheStrategy(DiskCacheStrategy.ALL)
             .into(actorImageView)
@@ -77,20 +127,20 @@ class ActorCardScreenFragment : Fragment() {
     }
 
     private fun initializeGameLevelWithSituations() {
-        mGameLevelWithSituations = Gson().fromJson(
+        mGameLevelWithSituationsAndActions = Gson().fromJson(
             requireArguments().getString(GAME_LEVEL_WITH_SITUATIONS_KEY),
-            GameLevelWithSituations::class.java
+            GameLevelWithSituationsAndActions::class.java
         )
     }
 
     companion object {
         private const val GAME_LEVEL_WITH_SITUATIONS_KEY = "gameLevelWithSituations"
 
-        fun newInstance(gameLevelWithSituations: GameLevelWithSituations): ActorCardScreenFragment {
+        fun newInstance(gameLevelWithSituationsAndActions: GameLevelWithSituationsAndActions): ActorCardScreenFragment {
             val actorCardScreenFragment = ActorCardScreenFragment()
 
             actorCardScreenFragment.arguments = Bundle().apply {
-                putString(GAME_LEVEL_WITH_SITUATIONS_KEY, Gson().toJson(gameLevelWithSituations))
+                putString(GAME_LEVEL_WITH_SITUATIONS_KEY, Gson().toJson(gameLevelWithSituationsAndActions))
             }
 
             return actorCardScreenFragment

@@ -9,16 +9,17 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import com.sdv.kit.solvio.entity.GameLevel
-import com.sdv.kit.solvio.entity.Situation
-import com.sdv.kit.solvio.entity.relation.GameLevelWithSituations
+import com.sdv.kit.solvio.entity.Action
+import com.sdv.kit.solvio.entity.relation.GameLevelWithSituationsAndActions
+import com.sdv.kit.solvio.entity.relation.SituationWithActions
+import com.sdv.kit.solvio.util.FirebaseEntityConverterUtil
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
-    private val _levels = MutableLiveData(listOf<GameLevelWithSituations>())
-    val levels: LiveData<List<GameLevelWithSituations>> = _levels
+    private val _levels = MutableLiveData(listOf<GameLevelWithSituationsAndActions>())
+    val levels: LiveData<List<GameLevelWithSituationsAndActions>> = _levels
 
     fun getLevels() = CoroutineScope(Dispatchers.IO).launch {
         Firebase.database.getReference("levels/").addValueEventListener(object : ValueEventListener {
@@ -33,33 +34,34 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     private fun handleSnapshots(snapshots: List<DataSnapshot>) {
-        val levelsWithSituations = mutableListOf<GameLevelWithSituations>()
+        val levelsWithSituationsAndActions = mutableListOf<GameLevelWithSituationsAndActions>()
 
         snapshots.forEach { snapshot ->
             val levelMap = snapshot.value as Map<*, *>
+            val situationsWithActions = mutableListOf<SituationWithActions>()
+            val situations = levelMap["situations"] as ArrayList<*>
 
-            val situations = mutableListOf<Situation>()
-            (levelMap["situations"] as ArrayList<*>).forEach {
-                if (it != null) situations.add(buildSituation(it as Map<*, *>))
-            }
+            situations.forEach { situationMap -> if (situationMap != null) {
+                val situation = FirebaseEntityConverterUtil.toSituation(situationMap as Map<*, *>)
+                val actions = mutableListOf<Action>()
 
-            levelsWithSituations.add(GameLevelWithSituations(buildGameLevel(levelMap), situations))
+                extractActions(situationMap).forEach { actionMap -> if (actionMap != null)
+                    actions.add(FirebaseEntityConverterUtil.toAction(actionMap as Map<*, *>))
+                }
+
+                situationsWithActions.add(SituationWithActions(situation, actions))
+            } }
+
+            levelsWithSituationsAndActions.add(GameLevelWithSituationsAndActions(
+                FirebaseEntityConverterUtil.toGameLevel(levelMap), situationsWithActions))
         }
 
-        _levels.value = levelsWithSituations
+        _levels.value = levelsWithSituationsAndActions
     }
 
-    private fun buildSituation(situationMap: Map<*, *>): Situation = Situation.Builder()
-        .situationId(situationMap["situationId"].toString().toLong())
-        .actorName(situationMap["actorName"].toString())
-        .actorImageUrl(situationMap["actorImageUrl"].toString())
-        .situationDescription(situationMap["situationDescription"].toString())
-        .build()
-
-    private fun buildGameLevel(levelMap: Map<*, *>): GameLevel = GameLevel.Builder()
-        .levelName(levelMap["levelName"].toString())
-        .backgroundImageUrl(levelMap["backgroundImageUrl"].toString())
-        .levelDescription(levelMap["levelDescription"].toString())
-        .situationsCount((levelMap["situations"] as ArrayList<*>).size - 1)
-        .build()
+    private fun extractActions(situationMap: Map<*, *>): List<*> = try {
+        (situationMap["actions"] as HashMap<*, *>).values.toList()
+    } catch (e: ClassCastException) {
+        (situationMap["actions"] as ArrayList<*>).toList()
+    }
 }
