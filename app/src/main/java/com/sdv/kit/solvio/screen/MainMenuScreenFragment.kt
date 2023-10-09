@@ -5,19 +5,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.Animation
-import android.view.animation.Animation.AnimationListener
-import android.view.animation.AnimationUtils
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.widget.ViewPager2
-import com.sdv.kit.solvio.R
 import com.sdv.kit.solvio.adapter.LevelsRecyclerViewAdapter
 import com.sdv.kit.solvio.contract.ScreenChanger
 import com.sdv.kit.solvio.databinding.FragmentScreenMainMenuBinding
 import com.sdv.kit.solvio.entity.relation.GameLevelWithSituationsAndActions
 import com.sdv.kit.solvio.util.ViewPagerCustomizerUtil
-import com.sdv.kit.solvio.view.dialog.SettingsDialog
+import com.sdv.kit.solvio.view.dialog.SettingsBottomSheetDialog
 import com.sdv.kit.solvio.viewmodel.MainViewModel
 
 class MainMenuScreenFragment : Fragment() {
@@ -67,7 +63,7 @@ class MainMenuScreenFragment : Fragment() {
         }
 
         mBinding!!.settingsButton.setOnClickListener {
-            SettingsDialog().show(parentFragmentManager, null)
+            SettingsBottomSheetDialog().show(childFragmentManager, null)
         }
     }
 

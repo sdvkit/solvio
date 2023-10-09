@@ -40,8 +40,8 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/settingsButton"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_gravity="top"
             android:layout_margin="32dp"
             android:background="@drawable/background_settings_button"
@@ -66,7 +66,7 @@
         android:layout_height="60dp"
         android:layout_gravity="center"
         android:background="@drawable/play_button"
-        android:contentDescription="@string/action"
+        android:contentDescription="@string/play"
         android:fontFamily="@font/pt_sans_narrow_regular"
         android:textAllCaps="false"
         android:textColor="@color/white"

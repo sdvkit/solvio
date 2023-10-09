@@ -138,7 +138,7 @@
                     android:fontFamily="@font/pt_sans_narrow_regular"
                     android:textStyle="bold"
                     android:contentDescription="@string/action"
-                    android:background="@drawable/background_situation_action_button"
+                    android:background="@drawable/background_default_button"
                     tools:text="Действие 1" />
 
                 <androidx.appcompat.widget.AppCompatButton
@@ -152,7 +152,7 @@
                     android:fontFamily="@font/pt_sans_narrow_regular"
                     android:textStyle="bold"
                     android:contentDescription="@string/action"
-                    android:background="@drawable/background_situation_action_button"
+                    android:background="@drawable/background_default_button"
                     android:layout_marginTop="8dp"
                     tools:text="Действие 2" />
 

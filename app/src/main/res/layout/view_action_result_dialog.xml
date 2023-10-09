@@ -61,7 +61,7 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@drawable/background_situation_action_button"
+            android:background="@drawable/background_default_button"
             android:contentDescription="@string/close"
             android:fontFamily="@font/pt_sans_narrow_regular"
             android:textAllCaps="false"

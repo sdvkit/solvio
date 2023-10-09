@@ -41,9 +41,12 @@ android {
 
 dependencies {
     val gpsAuthVersion = "20.7.0"
-    val splashScreenVersion = "1.0.0"
+    val splashScreenVersion = "1.0.1"
     val glideVersion = "4.16.0"
     val gsonVersion = "2.10.1"
+
+    // BCrypt
+    implementation("org.mindrot:jbcrypt:0.4")
 
     // Gson
     implementation("com.google.code.gson:gson:$gsonVersion")

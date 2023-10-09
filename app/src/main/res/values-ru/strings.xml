@@ -9,4 +9,14 @@
     <string name="help">Помошь</string>
     <string name="settings">Настройки</string>
     <string name="close">Закрыть</string>
+    <string name="play">Играть</string>
+    <string name="create_new_level">Создать новый уровень</string>
+    <string name="add_situation">Добавить ситуацию</string>
+    <string name="special_key">Специальный ключ</string>
+    <string name="check_key">Проверить ключ</string>
+    <string name="level_creation">Создание уровня</string>
+    <string name="save">Сохранить</string>
+    <string name="level_name">Название уровня</string>
+    <string name="description">Описание</string>
+    <string name="image_url">URL картинки</string>
 </resources>

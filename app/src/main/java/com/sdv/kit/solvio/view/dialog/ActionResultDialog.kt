@@ -19,7 +19,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class ActionResultDialog : DialogFragment() {
-    private var mBinding: ViewActionResultDialogBinding? = null
+    private lateinit var mBinding: ViewActionResultDialogBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,7 +27,7 @@ class ActionResultDialog : DialogFragment() {
         savedInstanceState: Bundle?
     ): View {
         mBinding = ViewActionResultDialogBinding.inflate(inflater, container, false)
-        return mBinding!!.root
+        return mBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -41,7 +41,7 @@ class ActionResultDialog : DialogFragment() {
         return dialog
     }
 
-    private fun configureViews() = with (mBinding!!) {
+    private fun configureViews() = with (mBinding) {
         val action = Gson().fromJson(requireArguments().getString(ACTION_KEY), Action::class.java)
         loadActionImage(actionResultImageView, action.actionResultImageUrl)
         setClickListeners()
@@ -50,7 +50,7 @@ class ActionResultDialog : DialogFragment() {
         actionResultBackground.setBackgroundColor(getBackgroundColor(action))
     }
 
-    private fun setClickListeners() = with (mBinding!!) {
+    private fun setClickListeners() = with (mBinding) {
         closeButton.setOnClickListener {
             dismiss()
         }
