@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.RadioGroup
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.sdv.kit.solvio.databinding.ViewAddSituationDialogBinding
@@ -56,6 +55,7 @@ class AddingSituationBottomSheetDialog(private val gameLevel: GameLevel) : Botto
         saveButton.setOnClickListener {
             val situationWithActions = SituationWithActions(buildSituation(), buildActions())
             mViewModel!!.saveSituationWithActions(GameLevelWithSituationsAndActions(gameLevel, listOf(situationWithActions)))
+            dismiss()
         }
     }
 

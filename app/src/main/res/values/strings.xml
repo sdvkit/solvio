@@ -26,4 +26,9 @@
     <string name="result_image_url">Result image url</string>
     <string name="_2">2</string>
     <string name="is_positive">Is positive</string>
+    <string name="results">Results</string>
+    <string name="back_to_levels_menu">Back to levels menu</string>
+    <string name="show_choices_history">Show choices history</string>
+    <string name="your_choice">Your choice:</string>
+    <string name="choices_history">Choices history</string>
 </resources>

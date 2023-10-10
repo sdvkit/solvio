@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:src="@drawable/image_decoration_blob_1"
         android:layout_margin="32dp"/>
 
@@ -52,7 +52,7 @@
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:src="@drawable/image_decoration_blob_3"
-        android:layout_marginTop="550dp"
+        android:layout_marginTop="580dp"
         android:layout_marginStart="40dp"
         android:layout_gravity="start"/>
 

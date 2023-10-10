@@ -45,12 +45,14 @@ class SettingsBottomSheetDialog(private val gameLevel: GameLevel) : BottomSheetD
 
     private fun setClickListeners() = with (mBinding) {
         createNewLevelButton.setOnClickListener {
-            PasswordCheckDialog(currentEditLevelsKey).show(childFragmentManager, null)
+            PasswordCheckDialog(currentEditLevelsKey).show(parentFragmentManager, null)
+            dismiss()
         }
 
         addSituationButton.setOnClickListener {
             PasswordCheckDialog(currentEditLevelsKey, gameLevel)
-                .show(childFragmentManager, null)
+                .show(parentFragmentManager, null)
+            dismiss()
         }
     }
 }

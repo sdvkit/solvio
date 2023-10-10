@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp">
+
+    <ImageView
+        android:id="@+id/actorImageView"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/background_choice_actor_avatar"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/image_gamer" />
+
+    <TextView
+        android:id="@+id/actorNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center"
+        android:elevation="30dp"
+        android:fontFamily="@font/pt_sans_narrow_bold"
+        android:singleLine="true"
+        android:textColor="@color/primary"
+        android:textSize="25sp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toEndOf="@+id/actorImageView"
+        app:layout_constraintTop_toTopOf="@+id/actorImageView"
+        tools:text="Actor"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center"
+        android:layout_marginStart="16dp"
+        android:elevation="30dp"
+        android:fontFamily="@font/pt_sans_narrow_regular"
+        android:singleLine="true"
+        android:text="@string/your_choice"
+        android:textColor="@color/grey"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/actorImageView"
+        app:layout_constraintStart_toEndOf="@+id/actorImageView" />
+
+    <TextView
+        android:id="@+id/choiceIndexTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center"
+        android:elevation="30dp"
+        android:fontFamily="@font/pt_sans_narrow_regular"
+        android:singleLine="true"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/actorImageView"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        tools:text="2"
+        tools:textColor="@color/green"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

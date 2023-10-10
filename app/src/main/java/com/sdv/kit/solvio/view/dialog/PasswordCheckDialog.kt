@@ -36,8 +36,14 @@ class PasswordCheckDialog(
             val encodedKey = BCrypt.hashpw(keyEditText.text.toString(), BCRYPT_SALT)
 
             if (currentKey == encodedKey) when (gameLevel == null) {
-                true -> CreateLevelBottomSheetDialog().show(childFragmentManager, null)
-                else -> AddingSituationBottomSheetDialog(gameLevel).show(childFragmentManager, null)
+                true -> {
+                    CreateLevelBottomSheetDialog().show(parentFragmentManager, null)
+                    dismiss()
+                }
+                else -> {
+                    AddingSituationBottomSheetDialog(gameLevel).show(parentFragmentManager, null)
+                    dismiss()
+                }
             }
         }
     }
