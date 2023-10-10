@@ -59,11 +59,13 @@ class MainMenuScreenFragment : Fragment() {
 
     private fun setClickListeners() {
         mBinding!!.playButton.setOnClickListener {
-            mScreenChanger?.openScreen(ActorCardScreenFragment.newInstance(mSelectedGameLevel!!))
+            if (mSelectedGameLevel!!.situations.isNotEmpty()) {
+                mScreenChanger?.openScreen(ActorCardScreenFragment.newInstance(mSelectedGameLevel!!))
+            }
         }
 
         mBinding!!.settingsButton.setOnClickListener {
-            SettingsBottomSheetDialog().show(childFragmentManager, null)
+            SettingsBottomSheetDialog(mSelectedGameLevel?.gameLevel!!).show(childFragmentManager, null)
         }
     }
 

@@ -21,11 +21,21 @@ class FirebaseEntityConverterUtil private constructor() {
             .situationDescription(situationMap["situationDescription"].toString())
             .build()
 
-        fun toGameLevel(levelMap: Map<*, *>): GameLevel = GameLevel.Builder()
-            .levelName(levelMap["levelName"].toString())
-            .backgroundImageUrl(levelMap["backgroundImageUrl"].toString())
-            .levelDescription(levelMap["levelDescription"].toString())
-            .situationsCount((levelMap["situations"] as ArrayList<*>).size - 1)
-            .build()
+        fun toGameLevel(levelMap: Map<*, *>): GameLevel {
+            val situations = extractSituations(levelMap).filterNotNull()
+            return GameLevel.Builder()
+                .levelName(levelMap["levelName"].toString())
+                .backgroundImageUrl(levelMap["backgroundImageUrl"].toString())
+                .levelDescription(levelMap["levelDescription"].toString())
+                .situationsCount(if (situations.isEmpty()) 0 else situations.size)
+                .build()
+        }
+
+        private fun extractSituations(levelMap: Map<*, *>): List<*> = try {
+            val tempSituations = levelMap["situations"] ?: arrayListOf<String>()
+            (tempSituations as ArrayList<*>).toList()
+        } catch (e: ClassCastException) {
+            (levelMap["situations"] as HashMap<*, *>).values.toList()
+        }
     }
 }

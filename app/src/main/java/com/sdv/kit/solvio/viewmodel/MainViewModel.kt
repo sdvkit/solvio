@@ -1,6 +1,7 @@
 package com.sdv.kit.solvio.viewmodel
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -39,7 +40,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         snapshots.forEach { snapshot ->
             val levelMap = snapshot.value as Map<*, *>
             val situationsWithActions = mutableListOf<SituationWithActions>()
-            val situations = levelMap["situations"] as ArrayList<*>
+            val situations = extractSituations(levelMap)
 
             situations.forEach { situationMap -> if (situationMap != null) {
                 val situation = FirebaseEntityConverterUtil.toSituation(situationMap as Map<*, *>)
@@ -57,6 +58,13 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         }
 
         _levels.value = levelsWithSituationsAndActions
+    }
+
+    private fun extractSituations(levelMap: Map<*, *>): List<*> = try {
+        val tempSituations = levelMap["situations"] ?: arrayListOf<String>()
+        (tempSituations as ArrayList<*>).toList()
+    } catch (e: ClassCastException) {
+        (levelMap["situations"] as HashMap<*, *>).values.toList()
     }
 
     private fun extractActions(situationMap: Map<*, *>): List<*> = try {

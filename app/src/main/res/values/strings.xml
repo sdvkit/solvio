@@ -18,4 +18,12 @@
     <string name="level_name">Level name</string>
     <string name="description">Description</string>
     <string name="image_url">Image URL</string>
+    <string name="adding_situation">Adding situation</string>
+    <string name="actor_name">Actor name</string>
+    <string name="actor_image_url">Actor image url</string>
+    <string name="_1">1</string>
+    <string name="result">Result</string>
+    <string name="result_image_url">Result image url</string>
+    <string name="_2">2</string>
+    <string name="is_positive">Is positive</string>
 </resources>

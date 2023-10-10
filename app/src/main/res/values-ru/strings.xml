@@ -19,4 +19,12 @@
     <string name="level_name">Название уровня</string>
     <string name="description">Описание</string>
     <string name="image_url">URL картинки</string>
+    <string name="adding_situation">Добавление ситуации</string>
+    <string name="actor_name">Имя субъекта</string>
+    <string name="actor_image_url">Картинка субъекта</string>
+    <string name="_1">1</string>
+    <string name="result">Результат</string>
+    <string name="result_image_url">Картинка результата</string>
+    <string name="_2">2</string>
+    <string name="is_positive">Положительное</string>
 </resources>

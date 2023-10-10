@@ -40,7 +40,13 @@ class CreateLevelBottomSheetDialog : BottomSheetDialogFragment() {
 
     private fun setClickListeners() = with (mBinding) {
         saveButton.setOnClickListener {
-            mViewModel!!.saveLevel(buildGameLevel())
+            if (levelNameEditText.text.isNotEmpty()
+                && descriptionEditText.text.isNotEmpty()
+                && imageUrlEditText.text.isNotEmpty()) {
+
+                mViewModel!!.saveLevel(buildGameLevel())
+                dismiss()
+            }
         }
     }
 

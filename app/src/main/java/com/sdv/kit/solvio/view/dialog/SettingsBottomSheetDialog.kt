@@ -7,10 +7,10 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.sdv.kit.solvio.databinding.ViewSettingsDialogBinding
-import com.sdv.kit.solvio.entity.EditOption
+import com.sdv.kit.solvio.entity.GameLevel
 import com.sdv.kit.solvio.viewmodel.SettingsBottomSheetViewModel
 
-class SettingsBottomSheetDialog : BottomSheetDialogFragment() {
+class SettingsBottomSheetDialog(private val gameLevel: GameLevel) : BottomSheetDialogFragment() {
     private lateinit var mBinding: ViewSettingsDialogBinding
     private var mViewModel: SettingsBottomSheetViewModel? = null
     private lateinit var currentEditLevelsKey: String
@@ -45,12 +45,11 @@ class SettingsBottomSheetDialog : BottomSheetDialogFragment() {
 
     private fun setClickListeners() = with (mBinding) {
         createNewLevelButton.setOnClickListener {
-            PasswordCheckDialog(currentEditLevelsKey, EditOption.CREATE_LEVEL)
-                .show(childFragmentManager, null)
+            PasswordCheckDialog(currentEditLevelsKey).show(childFragmentManager, null)
         }
 
         addSituationButton.setOnClickListener {
-            PasswordCheckDialog(currentEditLevelsKey, EditOption.ADD_SITUATION)
+            PasswordCheckDialog(currentEditLevelsKey, gameLevel)
                 .show(childFragmentManager, null)
         }
     }

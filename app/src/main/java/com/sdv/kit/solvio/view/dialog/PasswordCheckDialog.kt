@@ -6,13 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.sdv.kit.solvio.databinding.ViewPasswordCheckDialogBinding
-import com.sdv.kit.solvio.entity.EditOption
+import com.sdv.kit.solvio.entity.GameLevel
 import org.mindrot.jbcrypt.BCrypt
 
 class PasswordCheckDialog(
     private val currentKey: String,
-    private val editOption: EditOption
+    private val gameLevel: GameLevel?
 ) : DialogFragment() {
+    constructor(currentKey: String) : this(currentKey, null)
+
     private lateinit var mBinding: ViewPasswordCheckDialogBinding
 
     override fun onCreateView(
@@ -33,11 +35,9 @@ class PasswordCheckDialog(
         checkKeyButton.setOnClickListener {
             val encodedKey = BCrypt.hashpw(keyEditText.text.toString(), BCRYPT_SALT)
 
-            if (currentKey == encodedKey) when (editOption) {
-                EditOption.CREATE_LEVEL -> {
-                    CreateLevelBottomSheetDialog().show(childFragmentManager, null)
-                }
-                EditOption.ADD_SITUATION -> {}
+            if (currentKey == encodedKey) when (gameLevel == null) {
+                true -> CreateLevelBottomSheetDialog().show(childFragmentManager, null)
+                else -> AddingSituationBottomSheetDialog(gameLevel).show(childFragmentManager, null)
             }
         }
     }
