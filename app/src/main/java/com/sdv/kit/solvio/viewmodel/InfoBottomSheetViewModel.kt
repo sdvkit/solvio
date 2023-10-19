@@ -29,7 +29,7 @@ class InfoBottomSheetViewModel(application: Application) : AndroidViewModel(appl
                         references.add(refInfo)
                     }
 
-                    _referenceInfoList.value = references
+                    _referenceInfoList.value = references.sortedBy { it.key }
                 }
             }
 
