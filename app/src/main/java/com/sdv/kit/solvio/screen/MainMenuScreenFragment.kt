@@ -13,6 +13,7 @@ import com.sdv.kit.solvio.contract.ScreenChanger
 import com.sdv.kit.solvio.databinding.FragmentScreenMainMenuBinding
 import com.sdv.kit.solvio.entity.relation.GameLevelWithSituationsAndActions
 import com.sdv.kit.solvio.util.ViewPagerCustomizerUtil
+import com.sdv.kit.solvio.view.dialog.InfoBottomSheetDialog
 import com.sdv.kit.solvio.view.dialog.SettingsBottomSheetDialog
 import com.sdv.kit.solvio.viewmodel.MainViewModel
 
@@ -66,6 +67,10 @@ class MainMenuScreenFragment : Fragment() {
 
         mBinding!!.settingsButton.setOnClickListener {
             SettingsBottomSheetDialog(mSelectedGameLevel?.gameLevel!!).show(childFragmentManager, null)
+        }
+
+        mBinding!!.infoButton.setOnClickListener {
+            InfoBottomSheetDialog().show(childFragmentManager, null)
         }
     }
 

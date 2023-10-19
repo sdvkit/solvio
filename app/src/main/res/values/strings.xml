@@ -31,4 +31,5 @@
     <string name="show_choices_history">Show choices history</string>
     <string name="your_choice">Your choice:</string>
     <string name="choices_history">Choices history</string>
+    <string name="reference_information">Reference information</string>
 </resources>
