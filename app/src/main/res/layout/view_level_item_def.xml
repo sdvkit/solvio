@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardElevation="10dp"
+    app:cardCornerRadius="20dp"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true"
+    tools:layout_height="500dp">
+
+    <ImageView
+        android:id="@+id/levelBackgroundImageView"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/image_logo"/>
+
+    <TextView
+        android:id="@+id/levelNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_actor_name"
+        android:elevation="30dp"
+        android:textSize="22sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/pt_sans_narrow_bold"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:paddingStart="40dp"
+        android:paddingEnd="40dp"
+        android:layout_marginTop="215dp"
+        android:layout_gravity="top|center"
+        tools:text="Название"/>
+
+    <TextView
+        android:id="@+id/levelDescriptionTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_description"
+        android:fontFamily="@font/pt_sans_narrow_bold"
+        android:padding="16dp"
+        android:textColor="@color/grey"
+        android:textSize="20sp"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="80dp"
+        tools:text="Описание..." />
+
+
+    <ImageView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/icon_star"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="10dp"
+        app:tint="@color/primary" />
+
+    <TextView
+        android:id="@+id/levelStarsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/primary"
+        android:fontFamily="@font/pt_sans_narrow_bold"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="10dp"
+        tools:text="0"/>
+
+</androidx.cardview.widget.CardView>
