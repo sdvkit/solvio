@@ -1,27 +1,13 @@
 # Solvio
 
-## О проектке
+## About
 
-Solvio - мобильная игра, в которой игрок должен делать выбор между 2 предложенными вариантами дествий в какой-либо ситуации.
+Solvio is a mobile game in which the player must make a choice between 2 options for action in any situation.
 
-## База данных
+## Database
 
-JSON файл для восстановления Firebase Realtime Database хранится в директории ./db
+The Firebase Realtime Database recovery JSON file is stored in the ./db directory
 
-## Скриншоты 
+## Images
 
-![Alt text](git_images/splash_screen.png)
-
-![Alt text](git_images/auth_screen.png)
-
-![Alt text](git_images/main_menu.png)
-
-![Alt text](git_images/settings.png)
-
-![Alt text](git_images/create_level.png)
-
-![Alt text](git_images/actor_card.png)
-
-![Alt text](git_images/actor_card_result.png)
-
-![Alt text](git_images/game_result.png)
+![Alt text](git_images/game_images.png)
