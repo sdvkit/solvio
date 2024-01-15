@@ -1,0 +1,203 @@
+{
+  "edit_levels_key": "$2a$10$wyQ6JNPs29DQH6KcZYO.eeisvOVGprSVVB6HN662SqXJhrkJrd9Cm",
+  "indexes": {
+    "nextActionId": 19,
+    "nextSituationId": 9
+  },
+  "levels": {
+    "Школа": {
+      "backgroundImageUrl": "https://firebasestorage.googleapis.com/v0/b/solvio-120f1.appspot.com/o/school%2Fimage_background_level_1.png?alt=media&token=4b5ed577-54a1-4ae4-ac91-8b2bca2ae33b&_gl=1*1feevgm*_ga*MTQ1OTQ0NzM0NS4xNjk1NDc5MzI2*_ga_CW55HF8NVT*MTY5NjMzMTE5My4xOS4xLjE2OTYzMzM2MzAuMjQuMC4w",
+      "levelDescription": "На этом уровне вам предстоит решать ситуации, происходящие по дороге в школу.",
+      "levelName": "Школа",
+      "situations": [
+        {
+          "actions": [
+            {
+              "actionDescription": "Ударить мальчика Витю палкой",
+              "actionId": 0,
+              "actionResult": "Учитель увидел, как вы причинили телесное повреждение мальчику Вите. За это ваши родители выплатят штраф, а вас поставят на учёт в ИДН (ст. 10.1)",
+              "actionResultImageUrl": "https://firebasestorage.googleapis.com/v0/b/solvio-120f1.appspot.com/o/school%2Factors%2Fimage_bully.png?alt=media&token=6a28c504-1f49-40ee-a7a6-f789f10cb19a&_gl=1*lwflx5*_ga*MTQ1OTQ0NzM0NS4xNjk1NDc5MzI2*_ga_CW55HF8NVT*MTY5NjU5NDI2OS4yNC4xLjE2OTY1OTUyMzAuMS4wLjA.",
+              "isPositive": false
+            },
+            {
+              "actionDescription": "Помириться с мальчиком Витей",
+              "actionId": 1,
+              "actionResult": "Вы помирились с мальчиком Витей. Так держать!",
+              "actionResultImageUrl": "https://firebasestorage.googleapis.com/v0/b/solvio-120f1.appspot.com/o/school%2Factors%2Fimage_victor_funny.png?alt=media&token=f4de6b05-40c8-41af-b315-eb1ebc741dcd&_gl=1*13ox69h*_ga*MTQ1OTQ0NzM0NS4xNjk1NDc5MzI2*_ga_CW55HF8NVT*MTY5NjU5NDI2OS4yNC4xLjE2OTY1OTc1MDQuNDguMC4w",
+              "isPositive": true
+            }
+          ],
+          "actorImageUrl": "https://firebasestorage.googleapis.com/v0/b/solvio-120f1.appspot.com/o/school%2Factors%2Fimage_victor.png?alt=media&token=22143f0a-92a7-4859-85e0-939a30383ffa&_gl=1*1oegpyy*_ga*MTQ1OTQ0NzM0NS4xNjk1NDc5MzI2*_ga_CW55HF8NVT*MTY5NjU5NDI2OS4yNC4xLjE2OTY1OTU0NjYuNTAuMC4w",
+          "actorName": "Мальчик Витя",
+          "situationDescription": "Вы сильно поссорились с мальчиком Витей из-за игрушки. Что вы будете делать?",
+          "situationId": 0
+        },
+        {
+          "actions": {
+            "3": {
+              "actionDescription": "Поздороваться с соседом Олегом и идти дальше.",
+              "actionId": 3,
+              "actionResult": "Сосед Олег поздоровался с вами в ответ и пожелал успехов в школе. ",
+              "actionResultImageUrl": "https://firebasestorage.googleapis.com/v0/b/solvio-120f1.appspot.com/o/school%2Factors%2Fimage_neighbour_positive.png?alt=media&token=bbf170f8-222f-4ef5-a8d1-107223d992db&_gl=1*1hrrc1v*_ga*MTQ1OTQ0NzM0NS4xNjk1NDc5MzI2*_ga_CW55HF8NVT*MTY5NjYwNjg3Ny4yNi4xLjE2OTY2MDgyMjQuMjAuMC4w",
+              "isPositive": true
+            },
+            "4": {
+              "actionDescription": "Ударить палкой по стеклу",
+              "actionId": 4,
+              "actionResult": "Сосед Олег увидел, как вы умышленно повредили чужое имущество (его машину).  За это ваши родители выплатят штраф, а вас поставят на учёт в ИДН (ст. 11.3)",
+              "actionResultImageUrl": "https://firebasestorage.googleapis.com/v0/b/solvio-120f1.appspot.com/o/school%2Factors%2Fimage_neighbour.png?alt=media&token=5d12b3c0-2990-4f40-8313-94027a5433b2&_gl=1*wtm2js*_ga*MTQ1OTQ0NzM0NS4xNjk1NDc5MzI2*_ga_CW55HF8NVT*MTY5NjYwNjg3Ny4yNi4xLjE2OTY2MDc1MDguNTEuMC4w",
+              "isPositive": false
+            }
+          },
+          "actorImageUrl": "https://firebasestorage.googleapis.com/v0/b/solvio-120f1.appspot.com/o/school%2Factors%2Fimage_car.png?alt=media&token=a0f61597-536e-4ca1-9b31-03d2c6d47247&_gl=1*1l8fb2s*_ga*MTQ1OTQ0NzM0NS4xNjk1NDc5MzI2*_ga_CW55HF8NVT*MTY5NjYwNjg3Ny4yNi4xLjE2OTY2MDY5MDYuMzEuMC4w",
+          "actorName": "Машина соседа",
+          "situationDescription": "Вы видите перед собой стоящую машину соседа Олега. Что бы с ней сделать?",
+          "situationId": 1
+        },
+        {
+          "actions": {
+            "5": {
+              "actionDescription": "Воздержаться от покупки.",
+              "actionId": 5,
+              "actionResult": "На следующий день родители купили вам шоколадку за хорошее поведение. ",
+              "actionResultImageUrl": "https://firebasestorage.googleapis.com/v0/b/solvio-120f1.appspot.com/o/school%2Factors%2Fmarket.png?alt=media&token=6c67c783-4d69-45b3-a6f7-d3a58747c955&_gl=1*1ynpc0s*_ga*MTQ1OTQ0NzM0NS4xNjk1NDc5MzI2*_ga_CW55HF8NVT*MTY5NzQ0MjI2OC4zNy4xLjE2OTc0NDM1MDkuNTQuMC4w",
+              "isPositive": true
+            },
+            "6": {
+              "actionDescription": "Украсть шоколадку.",
+              "actionId": 6,
+              "actionResult": "Тётя милиционер узнала,что вы украли шоколадку. За это ваши родители выплатят штраф, а вас поставят на учёт в ИДН (ст. 11.1)",
+              "actionResultImageUrl": "https://firebasestorage.googleapis.com/v0/b/solvio-120f1.appspot.com/o/school%2Factors%2Fpolicewoman.png?alt=media&token=3ce64210-5cf3-4fe6-925e-fa17b12a97b1&_gl=1*u9gbrw*_ga*MTQ1OTQ0NzM0NS4xNjk1NDc5MzI2*_ga_CW55HF8NVT*MTY5NzQ0MjI2OC4zNy4xLjE2OTc0NDMzODcuNDguMC4w",
+              "isPositive": false
+            }
+          },
+          "actorImageUrl": "https://firebasestorage.googleapis.com/v0/b/solvio-120f1.appspot.com/o/school%2Factors%2Fchocolate.png?alt=media&token=02741bed-480a-4368-abfa-f1c8209b1f28&_gl=1*15wn7sl*_ga*MTQ1OTQ0NzM0NS4xNjk1NDc5MzI2*_ga_CW55HF8NVT*MTY5NzQ0MjI2OC4zNy4xLjE2OTc0NDMwMzYuNTQuMC4w",
+          "actorName": "Шоколадка",
+          "situationDescription": "Вы зашли в магазин за шоколадкой, но у вас не хватает на неё денег. Что делать?",
+          "situationId": 2
+        },
+        {
+          "actions": {
+            "7": {
+              "actionDescription": "Побить собаку.",
+              "actionId": 7,
+              "actionResult": "Прохожие отвели собаку к ветеринару и сказали, что вы её побили. За это ваши родители выплатят штраф, а вас поставят на учёт в ИДН, псих. диспансер (ст. 16.29)",
+              "actionResultImageUrl": "https://firebasestorage.googleapis.com/v0/b/solvio-120f1.appspot.com/o/school%2Factors%2Femergency.png?alt=media&token=3f586315-826e-4472-8e6a-d543ccc42369&_gl=1*1r22we*_ga*MTQ1OTQ0NzM0NS4xNjk1NDc5MzI2*_ga_CW55HF8NVT*MTY5NzQ0MjI2OC4zNy4xLjE2OTc0NDQ4NDkuNTEuMC4w",
+              "isPositive": false
+            },
+            "8": {
+              "actionDescription": "Пройти мимо.",
+              "actionId": 8,
+              "actionResult": "Вы спокойно идёте своей дорогой. Ничего плохого не происходит.",
+              "actionResultImageUrl": "https://firebasestorage.googleapis.com/v0/b/solvio-120f1.appspot.com/o/school%2Factors%2Fmuslim.png?alt=media&token=ab41e93c-1460-4451-9599-433eba52f334&_gl=1*3yob5s*_ga*MTQ1OTQ0NzM0NS4xNjk1NDc5MzI2*_ga_CW55HF8NVT*MTY5NzUzNTIxMC40Mi4xLjE2OTc1MzYyMzIuNTAuMC4w",
+              "isPositive": true
+            }
+          },
+          "actorImageUrl": "https://firebasestorage.googleapis.com/v0/b/solvio-120f1.appspot.com/o/school%2Factors%2Fdog.png?alt=media&token=420c25fc-ef84-4171-b39e-a62a6e697fc8&_gl=1*he9k5f*_ga*MTQ1OTQ0NzM0NS4xNjk1NDc5MzI2*_ga_CW55HF8NVT*MTY5NzQ0MjI2OC4zNy4xLjE2OTc0NDM5NTAuNTQuMC4w",
+          "actorName": "Дворовая собака",
+          "situationDescription": "По дороге в школу вы увидели дворовую собаку. Что бы сделать?",
+          "situationId": 3
+        },
+        {
+          "actions": {
+            "9": {
+              "actionDescription": "Сделать замечание Борису.",
+              "actionId": 9,
+              "actionResult": "После вашего замечания Борис решил почитать, что может грозить за оскорбления и ненормативную лексику в общественном месте.",
+              "actionResultImageUrl": "https://firebasestorage.googleapis.com/v0/b/solvio-120f1.appspot.com/o/school%2Factors%2Fstudent%20(1).png?alt=media&token=2083b38a-44e3-4c26-9276-e4d777bcae49&_gl=1*15ok0dl*_ga*MTQ1OTQ0NzM0NS4xNjk1NDc5MzI2*_ga_CW55HF8NVT*MTY5NzQ0MjI2OC4zNy4xLjE2OTc0NDc4MzUuNTEuMC4w",
+              "isPositive": true
+            },
+            "10": {
+              "actionDescription": "Повторять за ним.",
+              "actionId": 10,
+              "actionResult": "Прохожие сообщили о вашем поведении дяде Милиционеру. Ваши родители должны будут выплатить штраф, а вас поставят на учёт в ИДН (ст. 10.2)",
+              "actionResultImageUrl": "https://firebasestorage.googleapis.com/v0/b/solvio-120f1.appspot.com/o/school%2Factors%2Frock-star.png?alt=media&token=6d6cc444-7f8c-45b8-9c58-feab32262d6f&_gl=1*1ttyvig*_ga*MTQ1OTQ0NzM0NS4xNjk1NDc5MzI2*_ga_CW55HF8NVT*MTY5NzQ0MjI2OC4zNy4xLjE2OTc0NDc5MDYuNDcuMC4w",
+              "isPositive": false
+            }
+          },
+          "actorImageUrl": "https://firebasestorage.googleapis.com/v0/b/solvio-120f1.appspot.com/o/school%2Factors%2Fstudent.png?alt=media&token=f0639022-a8be-4a88-a04d-e0e0461d0640&_gl=1*q25blb*_ga*MTQ1OTQ0NzM0NS4xNjk1NDc5MzI2*_ga_CW55HF8NVT*MTY5NzQ0MjI2OC4zNy4xLjE2OTc0NDcwNzcuNDYuMC4w",
+          "actorName": "«Крутой» Борис",
+          "situationDescription": "По дороге в школу вы встретились с «крутым» Борисом. Борис много материться и оскорбляет всех вокруг. Что будете делать?",
+          "situationId": 4
+        },
+        {
+          "actions": {
+            "11": {
+              "actionDescription": "Взять сигарету.",
+              "actionId": 11,
+              "actionResult": "Учитель заметил, как вы со старшеклассником Сашей курите в туалете. За это ваши родители должны будут выплатить штраф, а вас поставят на учёт в ИДН (ст. 19.9)",
+              "actionResultImageUrl": "https://firebasestorage.googleapis.com/v0/b/solvio-120f1.appspot.com/o/school%2Factors%2Fteacher.png?alt=media&token=92537c7a-4119-48c7-888a-4866fc0aa252&_gl=1*2zw78m*_ga*MTQ1OTQ0NzM0NS4xNjk1NDc5MzI2*_ga_CW55HF8NVT*MTY5NzQ2ODkxOC4zOS4xLjE2OTc0NzAyMDQuNTMuMC4w",
+              "isPositive": false
+            },
+            "12": {
+              "actionDescription": "Отказаться.",
+              "actionId": 12,
+              "actionResult": "Вы сделали правильный выбор. За это ваши лёгкие сказали вам спасибо!",
+              "actionResultImageUrl": "https://firebasestorage.googleapis.com/v0/b/solvio-120f1.appspot.com/o/school%2Factors%2Fquit-smoking.png?alt=media&token=17f8cdf0-8e59-4286-82d7-f75421bb643a&_gl=1*8zx5ln*_ga*MTQ1OTQ0NzM0NS4xNjk1NDc5MzI2*_ga_CW55HF8NVT*MTY5NzQ2ODkxOC4zOS4xLjE2OTc0NzA1NjguNDUuMC4w",
+              "isPositive": true
+            }
+          },
+          "actorImageUrl": "https://firebasestorage.googleapis.com/v0/b/solvio-120f1.appspot.com/o/school%2Factors%2Fsmoke_boy.png?alt=media&token=0f396131-522f-4ec1-961a-a5ffdd4b5b43&_gl=1*o4gtt1*_ga*MTQ1OTQ0NzM0NS4xNjk1NDc5MzI2*_ga_CW55HF8NVT*MTY5NzQ2ODkxOC4zOS4xLjE2OTc0Njk5NzIuNDIuMC4w",
+          "actorName": "Старшеклассник Саша",
+          "situationDescription": "В школьном туалете вы столкнулись со старшеклассником Сашей. Он настаивает на том, чтобы вы курили сигарету с ним. Что делать?",
+          "situationId": 5
+        },
+        {
+          "actions": {
+            "15": {
+              "actionDescription": "Отказаться.",
+              "actionId": 15,
+              "actionResult": "Вы сделали правильный выбор. Так держать!",
+              "actionResultImageUrl": "https://firebasestorage.googleapis.com/v0/b/solvio-120f1.appspot.com/o/school%2Factors%2Fstudent_3.png?alt=media&token=1e3affc7-b443-483a-8199-b73c8783c78e&_gl=1*23u393*_ga*MTQ1OTQ0NzM0NS4xNjk1NDc5MzI2*_ga_CW55HF8NVT*MTY5NzUzMTA2Mi40MS4xLjE2OTc1MzIzNDcuNTEuMC4w",
+              "isPositive": true
+            },
+            "16": {
+              "actionDescription": "Взять пиво.",
+              "actionId": 16,
+              "actionResult": "Учитель заметил, как вы со старшеклассником Сашей пьёте пиво в туалете. За это ваши родители должны будут выплатить штраф, а вас поставят на учёт в ИДН (ст. 19.3)",
+              "actionResultImageUrl": "https://firebasestorage.googleapis.com/v0/b/solvio-120f1.appspot.com/o/school%2Factors%2Fteacher_2.png?alt=media&token=ca0ca714-3e79-4459-9835-5769a0bd72c8&_gl=1*idqof8*_ga*MTQ1OTQ0NzM0NS4xNjk1NDc5MzI2*_ga_CW55HF8NVT*MTY5NzUzMTA2Mi40MS4xLjE2OTc1MzIxNDkuNTcuMC4w",
+              "isPositive": false
+            }
+          },
+          "actorImageUrl": "https://firebasestorage.googleapis.com/v0/b/solvio-120f1.appspot.com/o/school%2Factors%2Fbeer_boy.png?alt=media&token=ead16461-40cf-4d86-88ec-cec3572d08e4&_gl=1*1dk3x5k*_ga*MTQ1OTQ0NzM0NS4xNjk1NDc5MzI2*_ga_CW55HF8NVT*MTY5NzUzMTA2Mi40MS4xLjE2OTc1MzE2NzAuNTYuMC4w",
+          "actorName": "Старшеклассник Саша",
+          "situationDescription": "Теперь Саша настаивает на том, чтобы вы выпили пиво. Что делать?",
+          "situationId": 7
+        },
+        {
+          "actions": {
+            "17": {
+              "actionDescription": "Успокоиться и играть дальше.",
+              "actionId": 17,
+              "actionResult": "Вы продолжили игру и победили. Хорошая робота!",
+              "actionResultImageUrl": "https://firebasestorage.googleapis.com/v0/b/solvio-120f1.appspot.com/o/school%2Factors%2Fping-pong%20(1).png?alt=media&token=aedc361c-08b1-48ea-9524-8878143f09cf&_gl=1*1lbbzyx*_ga*MTQ1OTQ0NzM0NS4xNjk1NDc5MzI2*_ga_CW55HF8NVT*MTY5NzUzNTIxMC40Mi4xLjE2OTc1MzUyMjMuNDcuMC4w",
+              "isPositive": true
+            },
+            "18": {
+              "actionDescription": "Ударить по теннисному столу.",
+              "actionId": 18,
+              "actionResult": "Физрук Павел Владимирович увидел, что вы вредите имуществу школы. За это ваши родители должны будут выплатить штраф и востановить имущество, а вас поставят на учёт в ИДН (ст. 11.3)",
+              "actionResultImageUrl": "https://firebasestorage.googleapis.com/v0/b/solvio-120f1.appspot.com/o/school%2Factors%2Fsport_man.png?alt=media&token=302b871d-9bf5-43a6-958e-e2859bd86896&_gl=1*a4p2kh*_ga*MTQ1OTQ0NzM0NS4xNjk1NDc5MzI2*_ga_CW55HF8NVT*MTY5NzUzNTIxMC40Mi4xLjE2OTc1MzU2NzcuNTMuMC4w",
+              "isPositive": false
+            }
+          },
+          "actorImageUrl": "https://firebasestorage.googleapis.com/v0/b/solvio-120f1.appspot.com/o/school%2Factors%2Fping-pong.png?alt=media&token=01267cb3-540d-4b06-a4b3-a508d163ba7b&_gl=1*1237apw*_ga*MTQ1OTQ0NzM0NS4xNjk1NDc5MzI2*_ga_CW55HF8NVT*MTY5NzUzMTA2Mi40MS4xLjE2OTc1MzI5MzQuNDYuMC4w",
+          "actorName": "Теннисный стол",
+          "situationDescription": "Во время игры в теннис с другом вы проиграли. Из-за этого вы разозлились. Что бы сделать?",
+          "situationId": 8
+        }
+      ]
+    }
+  },
+  "reference_info": {
+    "ИДН": "это организация, которая помогает несовершеннолетним до 14 лет. Они работают для того, чтобы предотвратить проблемы и нарушения закона среди несовершеннолетних. ИДН также помогает получить необходимую помощь и воспитание. Они создают условия, чтобы несовершеннолетние могли развиваться социально, адаптироваться и восстановиться, если они совершили ошибки. ИДН также работает над тем, чтобы социальные службы и инфраструктура для несовершеннолетних функционировали хорошо.",
+    "Статья(ст) 10_1": "Умышленное причинение телесного повреждения и иные насильственные действия либо нарушение защитного предписания влечет наложение штрафа в размере от десяти до тридцати базовых величин, или общественные работы, или административный арест.",
+    "Статья(ст) 10_2": "Оскорбление, то есть умышленное унижение чести и достоинства личности, выраженное в неприличной форме - влечет наложение штрафа в размере до тридцати базовых величин.",
+    "Статья(ст) 11_1": "Мелкое хищение имущества путем кражи, мошенничества, злоупотребления служебными полномочиями, присвоения или растраты, хищения путем использования компьютерной техники, а равно попытка такого хищения –  влекут наложение штрафа в размере от двух до тридцати базовых величин, или общественные работы, или административный арест.",
+    "Статья(ст) 11_3": "Умышленные уничтожение либо повреждение чужого имущества, повлекшие причинение ущерба в незначительном размере – влекут наложение штрафа в размере до тридцати базовых величин.",
+    "Статья(ст) 16_29": "1. Жестокое обращение с животным (за исключением истязания животного), не повлекшее его гибели или увечья, - влечет наложение штрафа в размере до пятнадцати базовых величин. 2. Избавление от животного - влечет наложение штрафа в размере от десяти до тридцати базовых величин. 3. Жестокое обращение с животным, выразившееся в истязании животного либо повлекшее его гибель или увечье, - влечет наложение штрафа в размере от двадцати до тридцати базовых величин, или общественные работы, или административный арест.",
+    "Статья(ст) 19_1": "Мелкое хулиганство – оскорбительное приставание к гражданам и другие умышленные действия, нарушающие общественный порядок, деятельность организаций или спокойствие граждан и выражающиеся в явном неуважении к обществу.",
+    "Статья(ст) 19_3": "Распитие алкогольных, слабоалкогольных напитков или пива на улице, стадионе, в сквере, парке, общественном транспорте или в других общественных местах, кроме мест, предназначенных для употребления алкогольных, слабоалкогольных напитков или пива, либо появление в общественном месте в состоянии алкогольного опьянения, оскорбляющем человеческое достоинство и общественную нравственность, - влекут наложение штрафа в размере до восьми базовых величин.",
+    "Статья(ст) 19_9": "Курение (потребление) табачных изделий, использование электронных систем курения, систем для потребления табака в местах, где они в соответствии с законодательными актами запрещены, – влекут наложение штрафа в размере до четырех базовых величин."
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "78460265550",
+    "project_id": "solvio-120f1",
+    "storage_bucket": "solvio-120f1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:78460265550:android:fad2fd4b202e2be1738f1f",
+        "android_client_info": {
+          "package_name": "com.sdv.kit.solvio"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkTF7MwhClWsyIO0THHzYRiXxRDOZBSs4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

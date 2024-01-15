@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="@color/primary">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        android:orientation="vertical"
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:background="@color/white">
+
+        <TextView
+            android:id="@+id/actionsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="24dp"
+            android:fontFamily="@font/pt_sans_narrow_bold"
+            android:text="@string/settings"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="35sp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/createNewLevelButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/icon_palette"
+            android:drawableTint="@color/primary"
+            android:drawablePadding="16dp"
+            android:fontFamily="@font/pt_sans_narrow_regular"
+            android:textStyle="bold"
+            android:text="@string/create_new_level"
+            android:textAlignment="textStart"
+            android:textColor="@color/primary"
+            android:textAllCaps="false"
+            android:textSize="25sp"
+            android:background="@android:color/transparent"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/addSituationButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/icon_plus"
+            android:drawableTint="@color/primary"
+            android:drawablePadding="16dp"
+            android:fontFamily="@font/pt_sans_narrow_regular"
+            android:textStyle="bold"
+            android:text="@string/add_situation"
+            android:textAlignment="textStart"
+            android:textColor="@color/primary"
+            android:textAllCaps="false"
+            android:textSize="25sp"
+            android:background="@android:color/transparent"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

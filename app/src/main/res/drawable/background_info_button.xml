@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:drawable="@drawable/image_decoration_blob_4"
+        android:height="72dp"
+        android:width="72dp"
+        android:gravity="center"/>
+    <item
+        android:drawable="@drawable/icon_book_open_page_variant"
+        android:height="30dp"
+        android:width="30dp"
+        android:gravity="center" />
+</layer-list>

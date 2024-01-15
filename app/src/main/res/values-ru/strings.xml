@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Solvio</string>
+    <string name="action">Действие</string>
+    <string name="back">Назад</string>
+    <string name="actions">Действия:</string>
+    <string name="tagline">Образовательная детская игра</string>
+    <string name="enter_game">Играть</string>
+    <string name="help">Помошь</string>
+    <string name="settings">Настройки</string>
+    <string name="close">Закрыть</string>
+    <string name="play">Играть</string>
+    <string name="create_new_level">Создать новый уровень</string>
+    <string name="add_situation">Добавить ситуацию</string>
+    <string name="special_key">Специальный ключ</string>
+    <string name="check_key">Проверить ключ</string>
+    <string name="level_creation">Создание уровня</string>
+    <string name="save">Сохранить</string>
+    <string name="level_name">Название уровня</string>
+    <string name="description">Описание</string>
+    <string name="image_url">URL картинки</string>
+    <string name="adding_situation">Добавление ситуации</string>
+    <string name="actor_name">Имя субъекта</string>
+    <string name="actor_image_url">Картинка субъекта</string>
+    <string name="_1">1</string>
+    <string name="result">Результат</string>
+    <string name="result_image_url">Картинка результата</string>
+    <string name="_2">2</string>
+    <string name="is_positive">Положительное</string>
+    <string name="results">Результаты</string>
+    <string name="back_to_levels_menu">Назад в меню уровней</string>
+    <string name="show_choices_history">Показать историю выборов</string>
+    <string name="your_choice">Вы  выбрали:</string>
+    <string name="choices_history">История выборов</string>
+    <string name="reference_information">Справочная информация</string>
+</resources>
